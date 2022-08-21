@@ -1,0 +1,44 @@
+@use 'config' as *;
+@forward  'config';
+
+//使用 bm模块
+// @include b(button){
+//     color: red;
+// }
+
+//z-button{}
+@mixin b($block) {
+    $B:$namespace+'-'+$block;
+    .#{$B}{
+        @content;
+    }
+}
+
+//z-button.is-xxx
+@mixin when($state) {
+  @at-root{
+      &.#{$state-prefix + $state}{
+        @content;
+      }
+  }
+}
+
+
+//&-primary => .z-button-primary
+@mixin when($modifier) {
+    @at-root{
+        #{&-$modifier-separator + $modifier}{
+          @content;
+        }
+    }
+  }
+  
+//&-header => .z-button-header
+@mixin when($element) {
+    @at-root{
+        #{&-$element-separator + $element}{
+          @content;
+        }
+    }
+  }
+

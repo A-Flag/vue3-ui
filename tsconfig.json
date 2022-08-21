@@ -1,0 +1,40 @@
+//自用版-添加其他看下面
+{
+  /* 根选项 */
+  // "include": ["./src/**/*"], // 指定被编译文件所在的目录
+  "exclude": [
+    "node_modules",
+    "**/__tests__",
+    "dist/**"
+  ], // 指定不需要被编译的目录
+  //使用小技巧：在填写路径时 ** 表示任意目录， * 表示任意文件。
+
+  /* 项目选项 */
+  "compilerOptions": {
+      "module":"ESNext",//打包模块类型ESNext
+      "declaration": false,//默认不需要声明文件
+      "noImplicitAny": true,
+      "removeComments": true, // 删除注释
+      "target": "ES6", // 目标语言的版本
+      // "module": "commonjs", // 生成代码的模板标准
+      "lib": ["DOM","ESNext"], // TS需要引用的库
+      "moduleResolution": "node",
+      "esModuleInterop": true, // 允许export=导出，由import from 导入
+      "jsx": "preserve",//jsx不转
+      "noLib": false,//不处理类库
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+       /* 实验选项 */
+       "experimentalDecorators": true,//是否启用对装饰器的实验性支持，装饰器是一种语言特性，还没有完全被 JavaScript 规范批准
+      //  "emitDecoratorMetadata": true,//为装饰器启用对发出类型元数据的实验性支持
+      "skipLibCheck": true,
+      /* 严格检查选项 */
+      "strict": true, // 开启所有严格的类型检查
+      // "noImplicitAny": true, // 不允许隐式的any类型
+      "noImplicitThis": true, // 不允许this有隐式的any类型
+      /* 额外检查 */
+      /* 高级选项 */
+      "forceConsistentCasingInFileNames": true,//是否区分文件系统大小写规则
+      "resolveJsonModule": true,//是否解析 JSON 模块
+  }
+}
